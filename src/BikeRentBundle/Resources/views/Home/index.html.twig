@@ -1,0 +1,53 @@
+{% extends 'base.html.twig' %}
+
+
+{% block stylesheets %} <link rel="stylesheet" href="{{ asset('css/home.css') }}"> {% endblock %}
+
+{% block body %}
+
+    <div class="container-fluid no-padding">
+
+        <div class="br-wrapper ">
+
+
+            <div class="br-banner">
+
+                <div class="br_video-banner">
+                    <div  id="br_video-banner" class="br_video-banner-dimensions">
+
+                        <video id="br_video-banner_html5_api" loop="" autoplay="" muted src="{{ asset('video/bike.mp4') }}">
+                            <source src="{{ asset('video/bike.mp4') }}" type="video/mp4">
+
+                        </video>
+
+                    </div>
+
+                    <div class="br-slider-content">
+                        <div class="container">
+                            <strong class="title" >Ready </strong>
+                            <strong class="title" style="margin-left: 210px">for  </strong>
+                            <strong class="title" style=" margin-left: 327px">a ride  </strong>
+
+                            <p class="br-rent-btn-box "><button type="button" class="btn btn-primary btn-lg btn-success br-btn-green">RENT A BIKE NOW </button></p>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+        </div>
+    </div>
+
+
+{% endblock %}
+
+
+
+{% block javascripts %}
+
+
+    <script src="{{ asset('js/index.js')}}"></script>
+{% endblock %}

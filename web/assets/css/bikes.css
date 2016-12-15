@@ -1,0 +1,64 @@
+
+.br-bikes-wrapper{
+    padding-top: 145px;
+    background: transparent;
+}
+
+.br-bike-box
+{
+    height: 400px;
+    margin-bottom: 20px;
+    text-align: center;
+    padding: 10px;
+
+}
+
+
+.br-bike-box:hover{
+    cursor: pointer;
+    -webkit-box-shadow:5px 0 38px rgba(0,0,0,0.23);
+    -moz-box-shadow: 5px 0 38px rgba(0,0,0,0.23);
+    box-shadow: 5px 0 38px rgba(0,0,0,0.23);
+
+}
+
+.br-bike-category{
+
+}
+
+.br-bike-category h3{
+
+    color: #CDDC39;
+    text-transform: uppercase;
+}
+.br-bike-price{
+    font-weight: bold;
+}
+.br-bike-actions {
+    margin-top: 10px;
+}
+.br-bike-action {
+    height: 40px;
+    width: 40px;
+    display: inline-block;
+    color: white;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 1.5;
+}
+
+.br-bike-action.rent{
+    background-color: #CDDC39;
+}
+
+.br-bike-action.view{
+    background-color: #2f2f32;
+
+}
+.br-bike-filter{
+    margin-right: 68px;
+    margin-bottom: 33px;
+    color: #CDDC39;
+    cursor: pointer;
+}
+

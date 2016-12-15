@@ -1,0 +1,26 @@
+<nav class="navbar navbar-default navbar-fixed-top br-menu-holder">
+    <div class="container">
+
+
+
+        <div class="navbar-header br-menu-header ">
+
+            <a class="navbar-brand" href="#" ><img src="{{ asset('img/logo7.png')}}" class="br-logo" ></a>
+        </div>
+
+
+        <div class="collapse navbar-collapse br-menu" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li class="{% if app.request.attributes.get('_route') == 'br.home.index' %}active{% endif %} ">
+                    <a href="{{ path('br.home.index') }}">Home </a></li>
+                <li class="{% if app.request.attributes.get('_route') == 'br.bikes.list' %}active{% endif %} "><a href="{{ path('br.bikes.list') }}">Search Bikes </a></li>
+                <li class="{% if app.request.attributes.get('_route') == 'br.bikes.rent' %}active{% endif %} "><a href="{{ path('br.bikes.rent') }}">Rent a Bike  </a></li>
+                <li class="{% if app.request.attributes.get('_route') == 'br.bikes.pricing' %}active{% endif %} " ><a href="{{ path('br.bikes.pricing') }}">Pricing</a></li>
+                <li class="{% if app.request.attributes.get('_route') == 'br.home.login' %}active{% endif %} "><a href="login.html">Log In</a></li>
+            </ul>
+        </div>
+
+
+    </div>
+
+</nav>

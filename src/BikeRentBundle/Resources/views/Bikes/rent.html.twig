@@ -1,0 +1,114 @@
+{% extends 'base.html.twig' %}
+
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="{{ asset('js/chosen_v1.6.2/chosen.css')}}">
+
+    <link rel="stylesheet" href="{{ asset('css/rent.css') }}"> {% endblock %}
+
+{% block body %}
+    <div class="container br-body-wrapper">
+        <div class="row">
+
+
+            <div class="col-xs-6 col-xs-offset-3">
+                <form >
+
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" class="form-control" id="name" placeholder="Full Name">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="name">Email</label>
+                        <input type="email" class="form-control" id="email" placeholder="Email">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Phone</label>
+                        <input type="tel" class="form-control" id="phone" placeholder="Phone number">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Rent start date</label>
+
+                        <input type="text" class="form-control" id="date_start">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Rent end date</label>
+
+                        <input type="text" class="form-control"   id="date_end">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Bikes</label>
+
+                        <select id="my_chosen" class="form-control" multiple>
+                            <option> Bik1 1 HM23</option>
+                            <option> Bik1 2 HM23</option>
+                            <option> Bik1 3 HM23</option>
+                            <option> Bik1 4 HM23</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Chose Accesories</label>
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <div class="col-xs-3 no-padding">
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox"> Check me out <br/>
+                                    <input type="checkbox"> Check me out 2<br/>
+                                    <input type="checkbox"> Check me out 3<br/>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-xs-3 no-padding ">
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox"> Check me out <br/>
+                                    <input type="checkbox"> Check me out 2<br/>
+                                    <input type="checkbox"> Check me out 3<br/>
+                                </label>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                    <div class="col-xs-12 no-padding" style="margin-top: 10px">
+                        <button type="submit" class="btn btn-success br-btn-green">Done</button>
+                    </div>
+
+
+
+                </form>
+
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+
+{% endblock %}
+
+
+
+{% block javascripts %}
+
+
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="{{ asset('/js/chosen_v1.6.2/chosen.jquery.js')}}" type="text/javascript"></script>
+    <script src="{{ asset('js/rent.js')}}"></script>
+{% endblock %}

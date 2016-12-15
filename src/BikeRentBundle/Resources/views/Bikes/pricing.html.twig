@@ -1,0 +1,83 @@
+{% extends 'base.html.twig' %}
+
+
+{% block stylesheets %} <link rel="stylesheet" href="{{ asset('css/pricing.css') }}"> {% endblock %}
+
+{% block body %}
+
+
+    <div class="br-wrapper br-pricing-bg" style="height: 1000px;">
+        <img src="assets/img/bike1.jpg" width="100%" height="100%"/>
+
+    </div>
+
+
+
+
+    <div class="container br-pricing-wrapper">
+        <div class="row">
+
+            <div class="col-xs-4 br-pricing-box">
+                <div class="br-pricing-header">
+                    <span> city </span>
+
+                </div>
+                <div class="br-pricing-body">
+
+
+                    <text>1 Day - 500 MKD</text>
+                    <br/>
+                    <text>2 Days - 800 MKD</text>
+                    <br/>
+                    <text>3+ Days - 300 MKD</text>
+                    <button class="btn br-btn-green">
+                        Rent <i class="fa fa-bicycle" aria-hidden="true"></i>
+                    </button>
+
+
+                </div>
+            </div>
+            <div class="col-xs-4 br-pricing-box ">
+                <div class="br-pricing-header">
+
+
+                    mountain
+                </div>
+                <div class="br-pricing-body">
+
+                    <text>1 Day - 600 MKD</text>
+                    <br/>
+                    <text>2 Days - 1000 MKD</text>
+                    <br/>
+                    <text>3+ Days - 450 MKD</text>
+
+
+                    <button class="btn br-btn-green">
+                        Rent <i class="fa fa-bicycle" aria-hidden="true"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="col-xs-4 br-pricing-box">
+                <div class="br-pricing-header">
+                    tandem
+
+                </div>
+                <div class="br-pricing-body">
+
+                    <text>1 Day - 800 MKD</text>
+                    <br/>
+                    <text>2 Days - 1500 MKD</text>
+                    <br/>
+                    <text>3+ Days - 600 MKD</text>
+
+                    <button class="btn br-btn-green">
+                        Rent <i class="fa fa-bicycle" aria-hidden="true"></i>
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+{% endblock %}
+
