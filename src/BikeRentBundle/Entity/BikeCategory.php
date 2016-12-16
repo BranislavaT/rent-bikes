@@ -31,6 +31,11 @@ class BikeCategory
     private $name;
 
     /**
+     * @ORM\Column(type="string", length=30)
+     */
+    private $key;
+
+    /**
      * @ORM\Column(type="decimal", scale=2)
      */
     private $price;
@@ -137,5 +142,29 @@ class BikeCategory
     public function getBikes()
     {
         return $this->bikes;
+    }
+
+    /**
+     * Set key
+     *
+     * @param string $key
+     *
+     * @return BikeCategory
+     */
+    public function setKey($key)
+    {
+        $this->key = $key;
+
+        return $this;
+    }
+
+    /**
+     * Get key
+     *
+     * @return string
+     */
+    public function getKey()
+    {
+        return $this->key;
     }
 }

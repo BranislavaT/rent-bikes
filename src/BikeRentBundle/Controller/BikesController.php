@@ -27,9 +27,9 @@ class BikesController extends  Controller
      * @Template()
      */
     public function listAction(){
-
-
-        return [];
+        $repository = $this->getDoctrine()->getRepository('BikeRentBundle:Bike');
+        $bikes = $repository->findAll();
+        return ['bikes' => $bikes];
     }
 
 

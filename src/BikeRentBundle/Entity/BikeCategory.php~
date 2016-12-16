@@ -31,6 +31,11 @@ class BikeCategory
     private $name;
 
     /**
+     * @ORM\Column(type="string", length=30)
+     */
+    private $key;
+
+    /**
      * @ORM\Column(type="decimal", scale=2)
      */
     private $price;
@@ -103,5 +108,39 @@ class BikeCategory
     public function getPrice()
     {
         return $this->price;
+    }
+
+    /**
+     * Add bike
+     *
+     * @param \BikeRentBundle\Entity\Bike $bike
+     *
+     * @return BikeCategory
+     */
+    public function addBike(\BikeRentBundle\Entity\Bike $bike)
+    {
+        $this->bikes[] = $bike;
+
+        return $this;
+    }
+
+    /**
+     * Remove bike
+     *
+     * @param \BikeRentBundle\Entity\Bike $bike
+     */
+    public function removeBike(\BikeRentBundle\Entity\Bike $bike)
+    {
+        $this->bikes->removeElement($bike);
+    }
+
+    /**
+     * Get bikes
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getBikes()
+    {
+        return $this->bikes;
     }
 }

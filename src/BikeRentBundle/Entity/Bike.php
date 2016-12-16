@@ -25,9 +25,14 @@ class Bike
     private $id;
 
     /**
+ * @ORM\Column(type="string", length=100)
+ */
+    private $model;
+
+    /**
      * @ORM\Column(type="string", length=100)
      */
-    private $model;
+    private $brend;
 
     /**
      * @ORM\Column(type="string", length=200)
@@ -122,5 +127,29 @@ class Bike
     public function getCategory()
     {
         return $this->category;
+    }
+
+    /**
+     * Set brend
+     *
+     * @param string $brend
+     *
+     * @return Bike
+     */
+    public function setBrend($brend)
+    {
+        $this->brend = $brend;
+
+        return $this;
+    }
+
+    /**
+     * Get brend
+     *
+     * @return string
+     */
+    public function getBrend()
+    {
+        return $this->brend;
     }
 }

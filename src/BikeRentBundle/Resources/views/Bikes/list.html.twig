@@ -17,16 +17,19 @@
 
             </div>
 
-            <div class="col-xs-4 br-bike-box mountain">
+
+            {% for bike in bikes %}
+
+            <div class="col-xs-4 br-bike-box {{ bike.category.key}}">
                 <div class="br-bike-img">
                     <img src="{{ asset('img/bikes/product-img1.jpg') }}">
                 </div>
                 <div class="br-bike-category" >
-                    <h3>Mountain Bike</h3>
-                    <small class="text-muted"> some model</small>
+                    <h3>{{ bike.category.name }}</h3>
+                    <small class="text-muted"> {{ bike.brend }} - {{ bike.model }}</small>
                 </div>
                 <div class="br-bike-price">
-                    950 MKD
+                    {{ bike.category.price }} MKD
                 </div>
                 <div class="br-bike-actions">
                     <div class="br-bike-action rent">
@@ -42,132 +45,7 @@
             </div>
 
 
-            <div class="col-xs-4 br-bike-box country">
-                <div class="br-bike-img">
-                    <img src="{{asset('img/bikes/product-img2.jpg')}}">
-                </div>
-                <div class="br-bike-category">
-                    <h3>Cross Country Bike</h3>
-                    <small class="text-muted"> some model</small>
-                </div>
-                <div class="br-bike-price">
-                    800 MKD
-                </div>
-                <div class="br-bike-actions">
-                    <div class="br-bike-action rent">
-                        <i class="fa fa-bicycle" aria-hidden="true"></i>
-                    </div>
-                    <div class="br-bike-action view">
-                        <i class="fa fa-eye" aria-hidden="true"></i>
-                    </div>
-
-
-                </div>
-
-            </div>
-
-
-            <div class="col-xs-4 br-bike-box city">
-                <div class="br-bike-img">
-                    <img src="{{asset('img/bikes/product-img3.jpg')}}">
-                </div>
-                <div class="br-bike-category">
-                    <h3>City Bike</h3>
-                    <small class="text-muted"> some model</small>
-                </div>
-                <div class="br-bike-price">
-                    300 MKD
-                </div>
-                <div class="br-bike-actions">
-                    <div class="br-bike-action rent">
-                        <i class="fa fa-bicycle" aria-hidden="true"></i>
-                    </div>
-                    <div class="br-bike-action view">
-                        <i class="fa fa-eye" aria-hidden="true"></i>
-                    </div>
-
-
-                </div>
-
-            </div>
-
-
-            <div class="col-xs-4 br-bike-box mountain">
-                <div class="br-bike-img">
-                    <img src="{{asset('img/bikes/product-img1.jpg')}}">
-                </div>
-                <div class="br-bike-category">
-                    <h3>Mountain Bike</h3>
-                    <small class="text-muted"> some model</small>
-                </div>
-                <div class="br-bike-price">
-                    300
-                </div>
-                <div class="br-bike-actions">
-                    <div class="br-bike-action rent">
-                        <i class="fa fa-bicycle" aria-hidden="true"></i>
-                    </div>
-                    <div class="br-bike-action view">
-                        <i class="fa fa-eye" aria-hidden="true"></i>
-                    </div>
-
-
-                </div>
-
-            </div>
-
-
-            <div class="col-xs-4 br-bike-box country">
-                <div class="br-bike-img">
-                    <img src="{{asset('img/bikes/product-img2.jpg')}}">
-                </div>
-                <div class="br-bike-category">
-                    <h3>Mountain Bike</h3>
-                    <small class="text-muted"> some model</small>
-                </div>
-                <div class="br-bike-price">
-                    300
-                </div>
-                <div class="br-bike-actions">
-                    <div class="br-bike-action rent">
-                        <i class="fa fa-bicycle" aria-hidden="true"></i>
-                    </div>
-                    <div class="br-bike-action view">
-                        <i class="fa fa-eye" aria-hidden="true"></i>
-                    </div>
-
-
-                </div>
-
-            </div>
-
-
-            <div class="col-xs-4 br-bike-box city">
-                <div class="br-bike-img">
-                    <img src="{{asset('img/bikes/product-img3.jpg')}}">
-                </div>
-                <div class="br-bike-category">
-                    <h3>Mountain Bike</h3>
-                    <small class="text-muted"> some model</small>
-                </div>
-                <div class="br-bike-price">
-                    300
-                </div>
-                <div class="br-bike-actions">
-                    <div class="br-bike-action rent">
-                        <i class="fa fa-bicycle" aria-hidden="true"></i>
-                    </div>
-                    <div class="br-bike-action view">
-                        <i class="fa fa-eye" aria-hidden="true"></i>
-                    </div>
-
-
-                </div>
-
-            </div>
-
-
-
+            {% endfor %}
 
 
         </div>

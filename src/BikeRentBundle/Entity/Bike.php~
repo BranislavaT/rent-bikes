@@ -25,9 +25,14 @@ class Bike
     private $id;
 
     /**
+ * @ORM\Column(type="string", length=100)
+ */
+    private $model;
+
+    /**
      * @ORM\Column(type="string", length=100)
      */
-    private $model;
+    private $brend;
 
     /**
      * @ORM\Column(type="string", length=200)
@@ -41,4 +46,110 @@ class Bike
      */
     private $category;
 
+
+    /**
+     * Get id
+     *
+     * @return integer
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set model
+     *
+     * @param string $model
+     *
+     * @return Bike
+     */
+    public function setModel($model)
+    {
+        $this->model = $model;
+
+        return $this;
+    }
+
+    /**
+     * Get model
+     *
+     * @return string
+     */
+    public function getModel()
+    {
+        return $this->model;
+    }
+
+    /**
+     * Set image
+     *
+     * @param string $image
+     *
+     * @return Bike
+     */
+    public function setImage($image)
+    {
+        $this->image = $image;
+
+        return $this;
+    }
+
+    /**
+     * Get image
+     *
+     * @return string
+     */
+    public function getImage()
+    {
+        return $this->image;
+    }
+
+    /**
+     * Set category
+     *
+     * @param \BikeRentBundle\Entity\BikeCategory $category
+     *
+     * @return Bike
+     */
+    public function setCategory(\BikeRentBundle\Entity\BikeCategory $category = null)
+    {
+        $this->category = $category;
+
+        return $this;
+    }
+
+    /**
+     * Get category
+     *
+     * @return \BikeRentBundle\Entity\BikeCategory
+     */
+    public function getCategory()
+    {
+        return $this->category;
+    }
+
+    /**
+     * Set brend
+     *
+     * @param string $brend
+     *
+     * @return Bike
+     */
+    public function setBrend($brend)
+    {
+        $this->brend = $brend;
+
+        return $this;
+    }
+
+    /**
+     * Get brend
+     *
+     * @return string
+     */
+    public function getBrend()
+    {
+        return $this->brend;
+    }
 }
