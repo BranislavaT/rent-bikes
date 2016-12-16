@@ -1,0 +1,44 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: anjatomovska
+ * Date: 12/16/16
+ * Time: 12:48 PM
+ */
+
+namespace BikeRentBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * @ORM\Entity
+ *
+ */
+class Bike
+{
+
+    /**
+     * @ORM\Column(type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+    /**
+     * @ORM\Column(type="string", length=100)
+     */
+    private $model;
+
+    /**
+     * @ORM\Column(type="string", length=200)
+     */
+    private $image;
+
+    /**
+     * Many Features have One Product.
+     * @ORM\ManyToOne(targetEntity="BikeCategory", inversedBy="bike")
+     * @ORM\JoinColumn(name="category_id", referencedColumnName="id")
+     */
+    private $category;
+
+}
