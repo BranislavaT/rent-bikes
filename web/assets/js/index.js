@@ -3,9 +3,10 @@ $(document).ready(function(){
     $(window).scroll(function(){
        if ($(document).scrollTop() > 10){
 
-           $(".br-menu-holder").addClass('br-menu-black-holder');
+           $(".br-menu-holder.navbar").css('background-color', 'rgba(0, 0, 0, 0.5)');
        } else {
-           $(".br-menu-holder").removeClass('br-menu-black-holder');
+           $(".br-menu-holder.navbar").css('background-color', 'transparent');
+
        }
     })
 })

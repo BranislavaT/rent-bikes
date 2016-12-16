@@ -14,9 +14,24 @@
                 <li class="{% if app.request.attributes.get('_route') == 'br.home.index' %}active{% endif %} ">
                     <a href="{{ path('br.home.index') }}">Home </a></li>
                 <li class="{% if app.request.attributes.get('_route') == 'br.bikes.list' %}active{% endif %} "><a href="{{ path('br.bikes.list') }}">Search Bikes </a></li>
-                <li class="{% if app.request.attributes.get('_route') == 'br.bikes.rent' %}active{% endif %} "><a href="{{ path('br.bikes.rent') }}">Rent a Bike  </a></li>
+                <li class="{% if app.request.attributes.get('_route') == 'br.rent.index' %}active{% endif %} "><a href="{{ path('br.rent.index') }}">Rent a Bike  </a></li>
                 <li class="{% if app.request.attributes.get('_route') == 'br.bikes.pricing' %}active{% endif %} " ><a href="{{ path('br.bikes.pricing') }}">Pricing</a></li>
-                <li class="{% if app.request.attributes.get('_route') == 'br.home.login' %}active{% endif %} "><a href="login.html">Log In</a></li>
+
+                {% if app.user == false %}
+
+                <li class="{% if app.request.attributes.get('_route') == 'fos_user_security_login' %}active{% endif %} "><a href="{{ path('fos_user_security_login') }}">Log In</a></li>
+                {% else %}
+
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ app.user }} <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li ><a href="{{ path('fos_user_security_logout') }}">Log Out</a></li>
+
+                        </ul>
+
+
+                {% endif %}
+
             </ul>
         </div>
 

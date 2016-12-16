@@ -2,8 +2,8 @@
 /**
  * Created by PhpStorm.
  * User: anjatomovska
- * Date: 12/15/16
- * Time: 4:23 PM
+ * Date: 12/16/16
+ * Time: 12:44 PM
  */
 
 namespace BikeRentBundle\Controller;
@@ -13,32 +13,19 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 
-
 /**
- * Class BikesController
+ * Class RentController
  * @package BikeRentBundle\Controller
- * @Route("/bikes")
+ * @Route("/rent")
  */
-class BikesController extends  Controller
+class RentController extends Controller
 {
 
     /**
-     * @Route("/", name="br.bikes.list")
+     * @Route("/", name="br.rent.index")
      * @Template()
      */
-    public function listAction(){
-
-
-        return [];
-    }
-
-
-
-    /**
-     * @Route("/pricing", name="br.bikes.pricing")
-     * @Template()
-     */
-    public function pricingAction(){
+    public function index(){
 
 
         return [];
