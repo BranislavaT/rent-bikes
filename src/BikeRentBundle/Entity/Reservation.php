@@ -26,7 +26,7 @@ class Reservation
 
     /**
      *
-     * @ORM\OneToOne(targetEntity="User")
+     * @ORM\ManyToOne(targetEntity="User")
      * @ORM\JoinColumn(name="user_id", referencedColumnName="id")
      */
     private $user;
@@ -42,6 +42,16 @@ class Reservation
     private $bikes;
 
     /**
+     *
+     * @ORM\ManyToMany(targetEntity="Accessory")
+     * @ORM\JoinTable(name="reservation_accessories",
+     *      joinColumns={@ORM\JoinColumn(name="reservation_id", referencedColumnName="id")},
+     *      inverseJoinColumns={@ORM\JoinColumn(name="accessory_id", referencedColumnName="id")}
+     *      )
+     */
+    private $accessories;
+
+    /**
      * @ORM\Column(type="date")
      */
     private $startDate;
@@ -51,6 +61,13 @@ class Reservation
      * @ORM\Column(type="date")
      */
     private $endDate;
+
+
+    /**
+     * @ORM\Column(type="string")
+     */
+    private $phone;
+
     /**
      * Constructor
      */
@@ -173,5 +190,63 @@ class Reservation
     public function getUser()
     {
         return $this->user;
+    }
+
+    /**
+     * Add accessory
+     *
+     * @param \BikeRentBundle\Entity\Accessory $accessory
+     *
+     * @return Reservation
+     */
+    public function addAccessory(\BikeRentBundle\Entity\Accessory $accessory)
+    {
+        $this->accessories[] = $accessory;
+
+        return $this;
+    }
+
+    /**
+     * Remove accessory
+     *
+     * @param \BikeRentBundle\Entity\Accessory $accessory
+     */
+    public function removeAccessory(\BikeRentBundle\Entity\Accessory $accessory)
+    {
+        $this->accessories->removeElement($accessory);
+    }
+
+    /**
+     * Get accessories
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getAccessories()
+    {
+        return $this->accessories;
+    }
+
+    /**
+     * Set phone
+     *
+     * @param string $phone
+     *
+     * @return Reservation
+     */
+    public function setPhone($phone)
+    {
+        $this->phone = $phone;
+
+        return $this;
+    }
+
+    /**
+     * Get phone
+     *
+     * @return string
+     */
+    public function getPhone()
+    {
+        return $this->phone;
     }
 }

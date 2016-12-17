@@ -1,7 +1,8 @@
 {% extends 'base.html.twig' %}
 
 
-{% block stylesheets %} <link rel="stylesheet" href="{{ asset('css/bikes.css') }}"> {% endblock %}
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('css/bikes.css') }}"> {% endblock %}
 
 {% block body %}
 
@@ -20,29 +21,30 @@
 
             {% for bike in bikes %}
 
-            <div class="col-xs-4 br-bike-box {{ bike.category.key}}">
-                <div class="br-bike-img">
-                    <img src="{{ asset('img/bikes/product-img1.jpg') }}">
-                </div>
-                <div class="br-bike-category" >
-                    <h3>{{ bike.category.name }}</h3>
-                    <small class="text-muted"> {{ bike.brend }} - {{ bike.model }}</small>
-                </div>
-                <div class="br-bike-price">
-                    {{ bike.category.price }} MKD
-                </div>
-                <div class="br-bike-actions">
-                    <div class="br-bike-action rent">
-                        <i class="fa fa-bicycle" aria-hidden="true"></i>
+                <div class="col-xs-4 br-bike-box {{ bike.category.key }}">
+                    <div class="br-bike-img">
+                        <img src="{{ asset('img/bikes/'~bike.category.key~'/'~bike.image) }}">
                     </div>
-                    <div class="br-bike-action view">
-                        <i class="fa fa-eye" aria-hidden="true"></i>
+                    <div class="br-bike-category">
+                        <h3>{{ bike.category.name }}</h3>
+                        <small class="text-muted"> {{ bike.brend }} - {{ bike.model }}</small>
+                    </div>
+                    <div class="br-bike-price">
+                        {{ bike.category.price }} MKD
+                    </div>
+                    <div class="br-bike-actions">
+                        <div class="br-bike-action rent">
+                            <a  href="{{ path('br.rent.index', {'bike':bike.id}) }}"> <i class="fa fa-bicycle" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                        <div class="br-bike-action view">
+                            <i class="fa fa-eye" aria-hidden="true"></i>
+                        </div>
+
+
                     </div>
 
-
                 </div>
-
-            </div>
 
 
             {% endfor %}
@@ -60,5 +62,5 @@
 {% block javascripts %}
 
 
-    <script src="{{ asset('js/bikes.js')}}"></script>
+    <script src="{{ asset('js/bikes.js') }}"></script>
 {% endblock %}

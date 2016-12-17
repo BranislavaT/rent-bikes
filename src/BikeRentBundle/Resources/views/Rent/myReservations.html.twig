@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+
+
+{% block body %}
+
+    <div class="container br-body-wrapper">
+        <div class="row">
+
+            <h2>My Reservations</h2>
+
+            <table class="table table-striped table-hover">
+                <thead>
+                <tr>
+
+                   <th>ID</th> <th> Start Date </th> <th> End Date </th> <th> Phone </th> <th> Bikes </th> <th> Accessories</th>
+                </tr>
+                </thead>
+
+                <tbody>
+
+                {%  if (reservations|length == 0) %}
+                <tr><td colspan="5" class="text-center">No Reservations made</td></tr>
+                {% endif %}
+
+
+                        {%  for reservation in reservations %}
+
+                        <tr>
+                            <td>RE-{{ reservation.id }}</td>
+                            <td>{{ reservation.startDate|date("d-m-Y")  }}</td>
+                            <td>{{ reservation.endDate|date("d-m-Y") }}</td>
+                            <td>{{ reservation.phone }}</td>
+
+                            <td> {%  for bike in reservation.bikes %} {{ bike.brend }}-{{ bike.model }} , {% endfor %}</td>
+
+                            <td>  {% if  reservation.accessories |length  >0%}
+                            {%  for accessory in reservation.accessories %} {{ accessory.name }} , {% endfor %}
+                            {% endif %}</td>
+
+                        </tr>
+                        {%  endfor %}
+
+                </tbody>
+
+            </table>
+        </div>
+    </div>
+
+{% endblock %}

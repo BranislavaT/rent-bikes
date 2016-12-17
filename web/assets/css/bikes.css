@@ -22,10 +22,15 @@
 
 }
 
-.br-bike-category{
+.br-bike-img{
+
+    width: 100%;
 
 }
-
+.br-bike-img img{
+    height: 222px;
+    width: 100%;
+}
 .br-bike-category h3{
 
     color: #CDDC39;
@@ -45,6 +50,9 @@
     font-weight: bold;
     font-size: 24px;
     line-height: 1.5;
+}
+.br-bike-action a {
+    color: white;
 }
 
 .br-bike-action.rent{

@@ -13,71 +13,65 @@
 
 
             <div class="col-xs-6 col-xs-offset-3">
-                <form >
+                <form method="post" action="{{ path('br.rent.rent') }}">
 
                     <div class="form-group">
-                        <label for="name">Full Name</label>
-                        <input type="text" class="form-control" id="name" placeholder="Full Name">
+                        <label for="name">Username</label>
+                        <input type="text" class="form-control" id="name" placeholder="Username" readonly value="{{ app.user.username }}">
                     </div>
 
                     <div class="form-group">
                         <label for="name">Email</label>
-                        <input type="email" class="form-control" id="email" placeholder="Email">
+                        <input type="email" class="form-control" id="email" placeholder="Email" readonly value="{{ app.user.email }}">
                     </div>
 
                     <div class="form-group">
                         <label for="phone">Phone</label>
-                        <input type="tel" class="form-control" id="phone" placeholder="Phone number">
+                        <input type="tel" class="form-control" id="phone" placeholder="Phone number" name="phone">
                     </div>
 
                     <div class="form-group">
                         <label for="phone">Rent start date</label>
 
-                        <input type="text" class="form-control" id="date_start">
+                        <input type="text" class="form-control" id="date_start" name="start_date">
                     </div>
 
                     <div class="form-group">
                         <label for="phone">Rent end date</label>
 
-                        <input type="text" class="form-control"   id="date_end">
+                        <input type="text" class="form-control"   id="date_end" name="end_date">
                     </div>
 
                     <div class="form-group">
                         <label for="phone">Bikes</label>
 
-                        <select id="my_chosen" class="form-control" multiple>
-                            <option> Bik1 1 HM23</option>
-                            <option> Bik1 2 HM23</option>
-                            <option> Bik1 3 HM23</option>
-                            <option> Bik1 4 HM23</option>
+                        <select id="my_chosen" class="form-control" multiple name="bikes[]" >
+                            {% for bike in bikes %}
+                                <option value="{{ bike.id }}" {% if app.request.get('bike') == bike.id  %} selected {% endif %}> {{ bike.brend }} - {{ bike.model }}</option>
+                            {%  endfor %}
+
                         </select>
                     </div>
 
                     <div class="form-group">
-                        <label for="phone">Chose Accesories</label>
+                        <label for="phone">Chose Accessories</label>
 
                     </div>
 
                     <div class="form-group">
 
-                        <div class="col-xs-3 no-padding">
+                        <div class="col-xs-4 no-padding">
                             <div class="checkbox">
                                 <label>
-                                    <input type="checkbox"> Check me out <br/>
-                                    <input type="checkbox"> Check me out 2<br/>
-                                    <input type="checkbox"> Check me out 3<br/>
+                                    {% for  accessory in accessories %}
+                                    <input type="checkbox" name="accessories[]" value="{{ accessory.id }}"> {{ accessory.name }} <br/>
+
+                                    {%  endfor %}
+
                                 </label>
                             </div>
                         </div>
-                        <div class="col-xs-3 no-padding ">
-                            <div class="checkbox">
-                                <label>
-                                    <input type="checkbox"> Check me out <br/>
-                                    <input type="checkbox"> Check me out 2<br/>
-                                    <input type="checkbox"> Check me out 3<br/>
-                                </label>
-                            </div>
-                        </div>
+
 
                     </div>
 

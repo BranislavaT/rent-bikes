@@ -87,3 +87,27 @@ a.br-green-link{
     color: #CDDC39;
     text-decoration: underline;
 }
+
+.br-login-bg{
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    opacity: 0.5;
+    height: 800px
+}
+
+.table-hover>tbody>tr:hover {
+    background-color: #CDDC39;
+}
+
+ul.user-menu{
+    background: rgba(0, 0, 0, 0.5);
+    margin-left: -100%;
+    margin-top: 6px;
+    border-top: transparent;
+    z-index: -1;
+}
+.nav .open>a, .nav .open>a:focus, .nav .open>a:hover{
+    background: transparent;
+}

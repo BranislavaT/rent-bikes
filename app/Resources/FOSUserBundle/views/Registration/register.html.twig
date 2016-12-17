@@ -2,10 +2,15 @@
 
 {% block body %}
 
+    <div class="br-wrapper br-login-bg" style="height: 800px;">
+        <img src="{{  asset('img/login-bg.jpg')}}" width="100%" height="100%"/>
+
+    </div>
     <div class="container br-body-wrapper">
         <div class="row">
 
             <div class="col-xs-6 col-xs-offset-3">
+
                 {{ form_start(form, {'method': 'post', 'action': path('fos_user_registration_register'), 'attr': {'class': 'fos_user_registration_register'}}) }}
 
                 <div class="form-group">
@@ -34,17 +39,15 @@
                 </div>
 
                 {{ form_rest(form) }}
-                {#<div class="form-group">#}
-                    {#<label for="username">{{ 'security.login.username'|trans }}</label>#}
-                    {#<input type="text" id="username" name="username" value="{{ last_username }}"#}
-                           {#required="required"#}
-                           {#class="form-control"/>#}
 
-                {#</div>#}
 
                 <div class="form-group">
                     <button type="submit" class="btn btn-success br-btn-green">Register</button>
 
+                </div>
+
+                <div class="form-group" style="margin-top: 20px">
+                    <label > Already you have account ? Click here to <a href="{{ path('fos_user_security_login') }}" class="br-green-link">Log In </a></label>
                 </div>
                 {{ form_end(form) }}
 

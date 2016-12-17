@@ -1,6 +1,11 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
+    <div class="br-wrapper br-login-bg" >
+        <img src="{{  asset('img/login-bg.jpg')}}" width="100%" height="100%"/>
+
+    </div>
+
 
     <div class="container br-body-wrapper">
         <div class="row">
@@ -44,7 +49,7 @@
                     <button type="submit" id="_submit" name="_submit"
                             class="btn btn-success br-btn-green ">{{ 'security.login.submit'|trans }}</button>
                     <div class="form-group" style="margin-top: 20px">
-                        <label class="text-muted"> Don`t have account ? Click here to <a href="{{ path('fos_user_registration_register') }}" class="br-green-link">Sign Up </a></label>
+                        <label > Don`t have account ? Click here to <a href="{{ path('fos_user_registration_register') }}" class="br-green-link">Sign Up </a></label>
                     </div>
                 </form>
 
